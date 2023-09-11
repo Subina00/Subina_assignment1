@@ -2,4 +2,12 @@
 comment0.target=Assignment1
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=marks
+comment2.target=int\ findHighestMark(java.util.ArrayList)
+comment3.params=marks
+comment3.target=int\ findLowestMark(java.util.ArrayList)
+comment4.params=marks
+comment4.target=double\ calculateMean(java.util.ArrayList)
+comment5.params=marks\ mean
+comment5.target=double\ calculateStandardDeviation(java.util.ArrayList,\ double)
+numComments=6

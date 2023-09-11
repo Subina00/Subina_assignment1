@@ -5,19 +5,20 @@
  * @author (Subina)
  * @version (Version 1.0 05/09/2023)
  */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Assignment1{
+public class Assignment1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        //Allow the user to input the assignment name
+        // F1: Allow the user to input the assignment name
         System.out.print("Enter the assignment name: ");
         String assignmentName = scanner.nextLine();
-        
-        // Allow the user to input students' marks for the assignment (up to 30 students)
+
+        // F2: Allow the user to input students' marks for the assignment (up to 30 students)
         ArrayList<Integer> marks = new ArrayList<>();
         for (int i = 1; i <= 30; i++) {
             while (true) {
@@ -37,38 +38,36 @@ public class Assignment1{
                 }
             }
         }
-        
-        
-        // Print the assignment name
+        // F4: Print the assignment name
         System.out.println("Assignment Name: " + assignmentName);
 
-        // Print the highest and lowest marks
+        // F5: Print the highest and lowest marks
         int highestMark = findHighestMark(marks);
         int lowestMark = findLowestMark(marks);
         System.out.println("Highest Mark: " + highestMark);
         System.out.println("Lowest Mark: " + lowestMark);
 
-        // Calculate and print mean and standard deviation
+        // F6: Calculate and print mean and standard deviation
         double mean = calculateMean(marks);
         double stddev = calculateStandardDeviation(marks, mean);
         System.out.println("Mean: " + mean);
         System.out.println("Standard Deviation: " + stddev);
 
         scanner.close();
-        
-        // Helper function to find the highest mark
-        private static int findHighestMark(ArrayList<Integer> marks) {
+    }
+
+    // Helper function to find the highest mark
+    private static int findHighestMark(ArrayList<Integer> marks) {
         int highestMark = -1;
         for (int mark : marks) {
             if (mark > highestMark) {
                 highestMark = mark;
             }
-
-    }
-            }
+                    }
         return highestMark;
-        
-        // Helper function to find the lowest mark
+    }
+
+// Helper function to find the lowest mark
     private static int findLowestMark(ArrayList<Integer> marks) {
         int lowestMark = 31;
         for (int mark : marks) {
@@ -87,8 +86,21 @@ public class Assignment1{
         }
         return (double) sum / marks.size();
     }
-
+        // Helper function to calculate the standard deviation of marks
+    private static double calculateStandardDeviation(ArrayList<Integer> marks, double mean) {
+        double sumOfSquares = 0;
+        for (int mark : marks) {
+            double diff = mark - mean;
+            sumOfSquares += diff * diff;
+        }
+        double variance = sumOfSquares / marks.size();
+        return Math.sqrt(variance);
     }
+}
+
+
+
+
 
 
 
