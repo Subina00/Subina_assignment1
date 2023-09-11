@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Assignment_1 here.
+ * This is the assignment1 to calculate the highest marks and lowest marks of the students and find the mean and standard deviation.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Subina)
+ * @version (Version 1.0 05/09/2023)
  */
 public class Assignment_1
 {
