@@ -17,7 +17,7 @@ public class Assignment1{
         System.out.print("Enter the assignment name: ");
         String assignmentName = scanner.nextLine();
         
-        // F2: Allow the user to input students' marks for the assignment (up to 30 students)
+        // Allow the user to input students' marks for the assignment (up to 30 students)
         ArrayList<Integer> marks = new ArrayList<>();
         for (int i = 1; i <= 30; i++) {
             while (true) {
@@ -37,8 +37,62 @@ public class Assignment1{
                 }
             }
         }
-}
-}
+        
+        
+        // Print the assignment name
+        System.out.println("Assignment Name: " + assignmentName);
+
+        // Print the highest and lowest marks
+        int highestMark = findHighestMark(marks);
+        int lowestMark = findLowestMark(marks);
+        System.out.println("Highest Mark: " + highestMark);
+        System.out.println("Lowest Mark: " + lowestMark);
+
+        // Calculate and print mean and standard deviation
+        double mean = calculateMean(marks);
+        double stddev = calculateStandardDeviation(marks, mean);
+        System.out.println("Mean: " + mean);
+        System.out.println("Standard Deviation: " + stddev);
+
+        scanner.close();
+        
+        // Helper function to find the highest mark
+        private static int findHighestMark(ArrayList<Integer> marks) {
+        int highestMark = -1;
+        for (int mark : marks) {
+            if (mark > highestMark) {
+                highestMark = mark;
+            }
+
+    }
+            }
+        return highestMark;
+        
+        // Helper function to find the lowest mark
+    private static int findLowestMark(ArrayList<Integer> marks) {
+        int lowestMark = 31;
+        for (int mark : marks) {
+            if (mark < lowestMark) {
+                lowestMark = mark;
+            }
+        }
+        return lowestMark;
+    }
+
+    // Helper function to calculate the mean of marks
+    private static double calculateMean(ArrayList<Integer> marks) {
+        int sum = 0;
+        for (int mark : marks) {
+            sum += mark;
+        }
+        return (double) sum / marks.size();
+    }
+
+    }
+
+
+
+
 
 
 
